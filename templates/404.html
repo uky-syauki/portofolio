@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}404 — Page not found{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container" style="text-align:center; padding-top: var(--space-10);">
+    <div style="font-size: 5rem;">🛸</div>
+    <h1 style="font-size: clamp(3rem, 8vw, 5rem); margin: var(--space-4) 0;">404</h1>
+    <p class="lead">This page drifted off into the aurora. Let's get you back.</p>
+    <div style="margin-top: var(--space-6);">
+      <a href="{{ url_for('index') }}" class="btn btn-primary">← Back home</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

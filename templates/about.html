@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<section class="hero hero-compact">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="badge">About us</span>
+      <h1>We craft tools that <span class="gradient-text">feel good</span> to use</h1>
+      <p class="lead">
+        Our workspace proves this template is more than pixels — it's how
+        modern meetings should feel: focused, mindful, and quietly beautiful.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <article class="card fade-in">
+        <div class="icon-chip">🎯</div>
+        <h3>Our Mission</h3>
+        <p>
+          Make modern web development approachable. This starter ships with
+          sane defaults, clean separation of templates and static assets, and
+          zero config — so you spend time building, not wiring.
+        </p>
+      </article>
+      <article class="card fade-in">
+        <div class="icon-chip">🛠️</div>
+        <h3>Our Stack</h3>
+        <p>
+          Flask on the backend with an application factory pattern, Jinja2
+          templates with reusable macros, and vanilla CSS custom properties —
+          no build step, no lock-in, easy to swap for Tailwind if you like.
+        </p>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top: var(--space-8)">
+      <span class="eyebrow">The team</span>
+      <h2>Small team, <span class="gradient-text">big care</span></h2>
+    </div>
+    <div class="grid grid-3">
+      <article class="card team-card fade-in">
+        <span class="avatar avatar-lg">🧑‍💻</span>
+        <h3>Rezka Chew</h3>
+        <small>Lead Engineer</small>
+        <p>Writes the Flask glue and keeps things fast.</p>
+      </article>
+      <article class="card team-card fade-in">
+        <span class="avatar avatar-lg">🧑‍🎨</span>
+        <h3>Kanaya Ayu</h3>
+        <small>Product Designer</small>
+        <p>Obsessing over spacing, type, and micro-interactions.</p>
+      </article>
+      <article class="card team-card fade-in">
+        <span class="avatar avatar-lg">🧑‍🚀</span>
+        <h3>Budi Santoso</h3>
+        <small>DevOps</small>
+        <p>Keeps deploys boring and uptime high.</p>
+      </article>
+    </div>
+
+    <div class="cta-card" style="margin-top: var(--space-8)">
+      <h2>Want to work with us?</h2>
+      <p>Check out the product API or say hello — the door is always open.</p>
+      <a href="{{ url_for('api_products') }}" class="btn btn-light">View API</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="badge">✨ New — v1.0 just launched</span>
+      <h1>Build something
+        <span class="gradient-text">beautiful</span> today</h1>
+      <p class="lead">
+        A modern Flask starter with a polished, responsive UI — glassmorphism,
+        dark mode, and buttery-smooth animations out of the box.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="{{ url_for('about') }}" class="btn btn-ghost">Learn More →</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>10K+</strong><span>Happy users</span></div>
+        <div><strong>4.9</strong><span>Avg rating</span></div>
+        <div><strong>99.9%</strong><span>Uptime</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="glass-card float-1">🚀 <strong>Shipped</strong><small>Deployed in 30s</small></div>
+      <div class="glass-card float-2">📈 <strong>+128%</strong><small>Growth this week</small></div>
+      <div class="glass-card float-3">🌌 <strong>Aurora</strong><small>Design system ready</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why {{ app_name }}</span>
+      <h2>Everything you need, <span class="gradient-text">nothing you don't</span></h2>
+    </div>
+    <div class="grid grid-3">
+      {% for f in features %}
+      <article class="card feature-card fade-in">
+        <div class="icon-chip">{{ f.icon }}</div>
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Catalog</span>
+      <h2>Featured <span class="gradient-text">products</span></h2>
+    </div>
+    <div class="grid grid-4">
+      {% for p in products %}
+      <article class="card product-card fade-in">
+        <div class="product-emoji">{{ p.emoji }}</div>
+        <span class="chip">{{ p.category }}</span>
+        <h3>{{ p.name }}</h3>
+        <div class="product-row">
+          <span class="price">${{ "%.2f"|format(p.price) }}</span>
+          <span class="rating">★ {{ p.rating }}</span>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>Loved by <span class="gradient-text">great people</span></h2>
+    </div>
+    <div class="grid grid-3">
+      {% for t in testimonials %}
+      <blockquote class="card testimonial-card fade-in">
+        <p class="quote">“{{ t.text }}”</p>
+        <div class="author">
+          <span class="avatar">{{ t.avatar }}</span>
+          <div>
+            <strong>{{ t.name }}</strong>
+            <small>{{ t.role }}</small>
+          </div>
+        </div>
+      </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-card">
+      <h2>Ready to start?</h2>
+      <p>Clone, run, ship. Your next project deserves a head start.</p>
+      <a href="{{ url_for('about') }}" class="btn btn-light">Get Started →</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
